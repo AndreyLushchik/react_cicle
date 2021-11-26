@@ -1,20 +1,18 @@
-import logo from "./logo.svg";
 import "./App.css";
-import data from "./data.json";
 
-function UserList() {
+function UserList(props) {
+	let { value } = props;
 	return (
 		<div>
-			{data.map((obj) => {
+			{value.map(({ _id, name }) => {
 				return (
-					<div key={`${obj._id}`}>
-						<h3>{obj.name.first}</h3>
-						<h4>{obj.name.last}</h4>
+					<div key={_id}>
+						<h3>{name.first}</h3>
+						<h4>{name.last}</h4>
 					</div>
 				);
 			})}
 		</div>
 	);
 }
-
 export default UserList;
