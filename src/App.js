@@ -1,10 +1,10 @@
 import "./App.css";
+import data from "./data.json";
 
-function UserList(props) {
-	let { value } = props;
+function UserList() {
 	return (
 		<div>
-			{value.map(({ _id, name }) => {
+			{data.map(({ _id, name }) => {
 				return (
 					<div key={_id}>
 						<h3>{name.first}</h3>
